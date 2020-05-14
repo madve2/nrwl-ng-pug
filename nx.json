@@ -25,6 +25,9 @@
     "ng-pug-sample-app-e2e": {
       "tags": [],
       "implicitDependencies": ["ng-pug-sample-app"]
+    },
+    "ng-pug-sample-lib": {
+      "tags": []
     }
   }
 }

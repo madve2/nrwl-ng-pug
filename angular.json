@@ -123,6 +123,38 @@
           }
         }
       }
+    },
+    "ng-pug-sample-lib": {
+      "projectType": "library",
+      "root": "libs/ng-pug-sample-lib",
+      "sourceRoot": "libs/ng-pug-sample-lib/src",
+      "prefix": "ng-pug-sample",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng-pug-sample-lib/tsconfig.lib.json",
+              "libs/ng-pug-sample-lib/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ng-pug-sample-lib/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ng-pug-sample-lib/jest.config.js",
+            "tsConfig": "libs/ng-pug-sample-lib/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ng-pug-sample-lib/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
